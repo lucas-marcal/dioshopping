@@ -6,7 +6,8 @@ import cartActions from './store/actions/cart';
 const useStyles = makeStyles((theme) => ({
     paper: {
       padding: theme.spacing(2),
-      textAlign: 'center'
+      textAlign: 'center',
+      borderRadius: "10px"
     },
   }));
 
@@ -16,7 +17,7 @@ const Card = ({ product, children }) => {
     const classes = useStyles();
 
     return(
-        <Grid item xs={3}>
+        <Grid item xs={12} sm={6} md={4} lg={3}>
             <Paper className={classes.paper}>
                 <Grid container direction='column'>
                     <Grid item>
@@ -31,6 +32,7 @@ const Card = ({ product, children }) => {
                 
                 <Button 
                     variant="contained"
+                    color="primary"
                     onClick={()=>dispatch(cartActions.Add(cart, product))}
                 >
                     Adicionar
