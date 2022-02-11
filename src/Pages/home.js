@@ -1,16 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import {
-    Box,
-    Grid,
-    Typography,
-    List,
-    makeStyles,
-} from "@material-ui/core/";
+import { Box, Grid, Typography, List, makeStyles } from "@material-ui/core/";
 import Item from "../components/Item";
-import Card from "../components/Card";
 import ProductListing from "../components/ProductListing";
-import ProductComponent from "../components/ProductComponent";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -57,7 +49,9 @@ const HomePage = () => {
         <Grid container spacing={3} className={classes.root}>
             <Grid item xs={3}>
                 <Box className={classes.paper} elevation={3}>
-                    <Typography variant="h5" color="primary">Categorias</Typography>
+                    <Typography variant="h5" color="primary">
+                        Categorias
+                    </Typography>
                     <List>
                         {category.map((category) => {
                             return (
@@ -71,7 +65,9 @@ const HomePage = () => {
                     </List>
                 </Box>
             </Grid>
-            <ProductListing />
+            <Grid item spacing={3} xs={9}>
+                <ProductListing />
+            </Grid>
         </Grid>
     );
 };

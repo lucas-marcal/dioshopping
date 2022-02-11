@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import ProductComponent from "./ProductComponent";
 import { setProducts } from "./store/actions/productActions";
+import { Grid } from "@material-ui/core";
 
 import productsList from "./store/reducers/product";
 
@@ -23,12 +24,12 @@ const ProductListing = () => {
     //     fetchProducts();
     // }, []);
 
-    console.log("Produtos: ", products)
+    console.log("Produtos: ", products);
 
     return (
-        <>
+        <Grid container spacing={3}>
             <ProductComponent />
-        </>
+        </Grid>
     );
 };
 
