@@ -24,8 +24,6 @@ const ProductListing = () => {
     //     fetchProducts();
     // }, []);
 
-    console.log("Produtos: ", products);
-
     return (
         <Grid container spacing={3}>
             <ProductComponent />

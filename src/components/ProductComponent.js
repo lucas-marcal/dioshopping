@@ -8,6 +8,7 @@ import {
 } from "@material-ui/core/";
 import { useSelector, useDispatch } from "react-redux";
 import cartActions from "./store/actions/cart";
+import ProductDetails from "./ProductDetails";
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -15,6 +16,12 @@ const useStyles = makeStyles((theme) => ({
         textAlign: "center",
         borderRadius: "10px",
     },
+    btn: {
+        marginBottom: theme.spacing(1),
+    },
+    price: {
+        marginBottom: theme.spacing(1),
+    }
 }));
 
 const ProductComponent = () => {
@@ -23,22 +30,24 @@ const ProductComponent = () => {
 
     const classes = useStyles();
     const renderList = products.map((product) => {
-        const { id_product, title, image, price, category, name_product } =
-            product;
-        console.log(product);
+        const { id_product, image, price, category, name_product } = product;
+
+        console.log(name_product);
+
         return (
             <Grid item xs={12} sm={6} md={4} lg={3} key={id_product}>
                 <Paper className={classes.paper}>
                     <Grid container direction="column">
                         <Grid item>
-                            <img width="140px" src={image} alt={title} />
+                            <img width="140px" src={image} alt={name_product} className={classes.price} />
                             <Typography variant="h6">{name_product}</Typography>
-                            <Typography variant="subtitle1">
+                            <Typography variant="subtitle1" className={classes.price} >
                                 R$ {price.toFixed(2)}
                             </Typography>
                         </Grid>
 
                         <Button
+                            className={classes.btn}
                             variant="contained"
                             color="primary"
                             onClick={() =>
@@ -47,6 +56,12 @@ const ProductComponent = () => {
                         >
                             Adicionar
                         </Button>
+                        <ProductDetails
+                            name_product={name_product}
+                            image={image}
+                            price={price}
+                            category={category}
+                        />
                     </Grid>
                 </Paper>
             </Grid>
