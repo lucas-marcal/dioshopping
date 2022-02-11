@@ -4,7 +4,7 @@ import store from "./components/store";
 import Routes from "./routes";
 import { Container } from "@material-ui/core/";
 import { createTheme, ThemeProvider } from "@material-ui/core/styles";
-import { orange } from "@material-ui/core/colors";
+import { orange, grey } from "@material-ui/core/colors";
 import Header from "./components/Header";
 import CssBaseline from "@material-ui/core/CssBaseline";
 
@@ -14,6 +14,9 @@ const theme = createTheme({
             default: "#FCFCFC",
         },
         primary: orange,
+        secondary: {
+            main: grey[700]
+        }
     },
     typography: {
       button: {

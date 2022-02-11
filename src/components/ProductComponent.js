@@ -26,13 +26,12 @@ const useStyles = makeStyles((theme) => ({
 
 const ProductComponent = () => {
     const products = useSelector((state) => state.products);
-    const { id_product, name_product, price, image } = products;
+    console.log(products)
+    const { id_product, name_product, price, image, name_categorys } = products;
 
     const classes = useStyles();
     const renderList = products.map((product) => {
-        const { id_product, image, price, category, name_product } = product;
-
-        console.log(name_product);
+        const { id_product, image, price, category, name_product, name_categorys } = product;
 
         return (
             <Grid item xs={12} sm={6} md={4} lg={3} key={id_product}>
@@ -60,7 +59,7 @@ const ProductComponent = () => {
                             name_product={name_product}
                             image={image}
                             price={price}
-                            category={category}
+                            name_category={name_categorys}
                         />
                     </Grid>
                 </Paper>
