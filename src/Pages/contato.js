@@ -18,14 +18,14 @@ const useStyles = makeStyles((theme) => ({
         marginLeft: theme.spacing()
     },
     btn:{
-        marginTop: theme.spacing(2),
+        marginTop: theme.spacing(3),
         padding: "0.8rem"
     },
-    comments: {
+    comment: {
         marginTop: theme.spacing(2)
     },
     form: {
-        marginTop: theme.spacing()
+        marginTop: theme.spacing(),
     },
     alert: {
         marginTop: theme.spacing(2)
@@ -109,26 +109,28 @@ const Contatos = () => {
             </Button>
             </Grid>
 
-            <Grid container direction="column" className={classes.comments}>
-                {message.map((content) => {
-                    return(
-                        <Card variant="outlined" className={classes.commentCard} key={content.id}>
-                            <CardContent>
-                                <Typography variant="h5" className={classes.name}>
-                                    {content.email}
-                                </Typography>
-                                <Typography variant="body1" className={classes.messageBody}>
-                                    {content.message}
-                                </Typography>
-                            </CardContent>
-                            <CardActions>
-                                <Typography variant="overline" className={classes.date}>
-                                    {content.created_at}
-                                </Typography>
-                            </CardActions>
-                        </Card>
-                    )
-                } )}
+            <Grid container direction="column">
+                <Grid item className={classes.comment}>
+                    {message.map((content) => {
+                        return(
+                            <Card variant="outlined" className={classes.commentCard} key={content.id}>
+                                <CardContent>
+                                    <Typography variant="h5" className={classes.name}>
+                                        {content.email}
+                                    </Typography>
+                                    <Typography variant="body1" className={classes.messageBody}>
+                                        {content.message}
+                                    </Typography>
+                                </CardContent>
+                                <CardActions>
+                                    <Typography variant="overline" className={classes.date}>
+                                        {content.created_at}
+                                    </Typography>
+                                </CardActions>
+                            </Card>
+                        )
+                    } )}
+                </Grid>
             </Grid>
 
 

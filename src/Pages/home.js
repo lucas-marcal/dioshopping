@@ -9,6 +9,8 @@ import {
 } from "@material-ui/core/";
 import Item from "../components/Item";
 import Card from "../components/Card";
+import ProductListing from "../components/ProductListing";
+import ProductComponent from "../components/ProductComponent";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -69,15 +71,7 @@ const HomePage = () => {
                     </List>
                 </Box>
             </Grid>
-            <Grid container spacing={3} item xs={9}>
-                {products.map((item) => {
-                    return (
-                        <Card key={item.id_product} product={item}>
-                            {item.name_product}
-                        </Card>
-                    );
-                })}
-            </Grid>
+            <ProductListing />
         </Grid>
     );
 };
