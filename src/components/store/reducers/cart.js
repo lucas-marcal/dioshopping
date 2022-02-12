@@ -70,5 +70,4 @@ export default function cart(state = INITIAL_STATE, action){
         default:
             return state;
     }
-    return state
 }

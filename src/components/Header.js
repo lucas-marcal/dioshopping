@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Container, Grid, Typography, Button, makeStyles } from "@material-ui/core/";
+import { Grid, Typography, Button, makeStyles } from "@material-ui/core/";
 import Cart from "./Cart";
 
 const useStyles = makeStyles((theme) => ({

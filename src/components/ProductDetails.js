@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Modal, makeStyles, Button, Grid, Typography, } from "@material-ui/core";
-import { StayPrimaryLandscape } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -25,6 +24,9 @@ const useStyles = makeStyles((theme) => ({
     },
     title: {
         fontWeight: "500"
+    },
+    price: {
+        color: theme.palette.primary.main
     }
 }));
 
@@ -38,8 +40,7 @@ function getModalStyle() {
 }
 
 const ProductDetails = ( product ) => {
-    const { id_product, image, price, name_category, name_product } = product;
-    console.log(product)
+    const { image, price, name_category, name_product } = product;
     const [modalStyle] = useState(getModalStyle);
     const [open, setOpen] = useState(false);
 
@@ -67,6 +68,9 @@ const ProductDetails = ( product ) => {
                 <Grid container className={classes.details}>
                     <Typography variant="h4" id="modalTitle" className={classes.title}>
                         {name_product}
+                    </Typography>
+                    <Typography variant="h4" id="modalPrice" className={classes.price}>
+                        R$ {price.toFixed(2)}
                     </Typography>
                     <Typography
                         variant="subtitle1"

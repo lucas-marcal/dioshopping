@@ -1,6 +1,6 @@
 import { ActionTypes } from "./actionTypes"
 
-const Add = (cart, product) => {
+export const Add = (cart, product) => {
     return{
         type: ActionTypes.ADD_TO_CART,
         cart,
@@ -8,7 +8,7 @@ const Add = (cart, product) => {
     }
 }
 
-const AddItem = (cart, product) => {
+export const AddItem = (cart, product) => {
     return{
         type: ActionTypes.ADD_ITEM,
         cart,
@@ -16,7 +16,7 @@ const AddItem = (cart, product) => {
     }
 }
 
-const RemoveItem = (cart, product) => {
+export const RemoveItem = (cart, product) => {
     return{
         type: ActionTypes.REMOVE_ITEM,
         cart,
@@ -24,7 +24,7 @@ const RemoveItem = (cart, product) => {
     }
 }
 
-const DeleteItem = (cart, product) => {
+export const DeleteItem = (cart, product) => {
     return{
         type: ActionTypes.DELETE_ITEM,
         cart,
@@ -32,17 +32,9 @@ const DeleteItem = (cart, product) => {
     }
 }
 
-const ChangeCart = (localCart) => {
+export const ChangeCart = (localCart) => {
     return{
         type: ActionTypes.CHANGE_CART,
         localCart
     }
-}
-
-export default {
-    Add,
-    AddItem,
-    RemoveItem,
-    DeleteItem,
-    ChangeCart
 }

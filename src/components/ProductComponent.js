@@ -7,7 +7,7 @@ import {
     makeStyles,
 } from "@material-ui/core/";
 import { useSelector, useDispatch } from "react-redux";
-import cartActions from "./store/actions/cart";
+import {Add} from "./store/actions/cart";
 import ProductDetails from "./ProductDetails";
 
 const useStyles = makeStyles((theme) => ({
@@ -26,12 +26,10 @@ const useStyles = makeStyles((theme) => ({
 
 const ProductComponent = () => {
     const products = useSelector((state) => state.products);
-    console.log(products)
-    const { id_product, name_product, price, image, name_categorys } = products;
 
     const classes = useStyles();
     const renderList = products.map((product) => {
-        const { id_product, image, price, category, name_product, name_categorys } = product;
+        const { id_product, image, price, name_product, name_categorys } = product;
 
         return (
             <Grid item xs={12} sm={6} md={4} lg={3} key={id_product}>
@@ -50,7 +48,7 @@ const ProductComponent = () => {
                             variant="contained"
                             color="primary"
                             onClick={() =>
-                                dispatch(cartActions.Add(cart, product))
+                                dispatch(Add(cart, product))
                             }
                         >
                             Adicionar

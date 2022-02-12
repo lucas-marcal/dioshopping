@@ -39,14 +39,12 @@ const HomePage = () => {
     let count = {};
 
     for (let i = 0; i < arrayCategory.length; i++) {
-        {
-            let key = arrayCategory[i];
-            count[key] = count[key] ? count[key] + 1 : 1;
-        }
+        let key = arrayCategory[i];
+        count[key] = count[key] ? count[key] + 1 : 1;
     }
 
     return (
-        <Grid container spacing={3} className={classes.root}>
+        <Grid container className={classes.root}>
             <Grid item xs={12} sm={3}>
                 <Box className={classes.paper} elevation={3}>
                     <Typography variant="h5" color="primary">
@@ -65,7 +63,7 @@ const HomePage = () => {
                     </List>
                 </Box>
             </Grid>
-            <Grid item spacing={3} xs={12} sm={9}>
+            <Grid item xs={12} sm={9}>
                 <ProductListing />
             </Grid>
         </Grid>

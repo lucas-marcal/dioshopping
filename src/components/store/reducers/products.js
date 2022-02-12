@@ -3,10 +3,6 @@ import productsList from './product';
 
 const PRODUCT = productsList;
 
-const initialState = {
-    products: [],
-}
-
 export const products = (state = PRODUCT, {type, payload}) => {
     switch (type) {
         case ActionTypes.SET_PRODUCTS:

@@ -79,8 +79,6 @@ const Contatos = () => {
         
         setAuthor('');
         setContent('');
-        
-        console.log(content)
     }  
 
     return(
