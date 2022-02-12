@@ -1,6 +1,8 @@
+import { ActionTypes } from "./actionTypes"
+
 const Add = (cart, product) => {
     return{
-        type: "ADD_TO_CART",
+        type: ActionTypes.ADD_TO_CART,
         cart,
         product
     }
@@ -8,7 +10,7 @@ const Add = (cart, product) => {
 
 const AddItem = (cart, product) => {
     return{
-        type: "ADD_ITEM",
+        type: ActionTypes.ADD_ITEM,
         cart,
         product
     }
@@ -16,7 +18,7 @@ const AddItem = (cart, product) => {
 
 const RemoveItem = (cart, product) => {
     return{
-        type: "REMOVE_ITEM",
+        type: ActionTypes.REMOVE_ITEM,
         cart,
         product
     }
@@ -24,7 +26,7 @@ const RemoveItem = (cart, product) => {
 
 const DeleteItem = (cart, product) => {
     return{
-        type: "DELETE_ITEM",
+        type: ActionTypes.DELETE_ITEM,
         cart,
         product
     }
@@ -32,7 +34,7 @@ const DeleteItem = (cart, product) => {
 
 const ChangeCart = (localCart) => {
     return{
-        type: "CHANGE_CART",
+        type: ActionTypes.CHANGE_CART,
         localCart
     }
 }

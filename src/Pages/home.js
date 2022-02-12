@@ -47,7 +47,7 @@ const HomePage = () => {
 
     return (
         <Grid container spacing={3} className={classes.root}>
-            <Grid item xs={3}>
+            <Grid item xs={12} sm={3}>
                 <Box className={classes.paper} elevation={3}>
                     <Typography variant="h5" color="primary">
                         Categorias
@@ -65,7 +65,7 @@ const HomePage = () => {
                     </List>
                 </Box>
             </Grid>
-            <Grid item spacing={3} xs={9}>
+            <Grid item spacing={3} xs={12} sm={9}>
                 <ProductListing />
             </Grid>
         </Grid>
