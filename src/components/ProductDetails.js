@@ -65,7 +65,7 @@ const ProductDetails = ( product ) => {
                 />
             </Grid>
             <Grid item xs={12} md={6}>
-                <Grid container className={classes.details}>
+                <Grid container direction="column" className={classes.details}>
                     <Typography variant="h4" id="modalTitle" className={classes.title}>
                         {name_product}
                     </Typography>
