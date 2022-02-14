@@ -43,10 +43,13 @@ const Contatos = () => {
     const [render, setRender] = useState(false);
     const [success, setSuccess] = useState(false);
 
-    useEffect(async () => {
-        const response = await fetch(url)
-        const data = await response.json();
-        setMessage(data);
+    useEffect(() => {
+        async function fetchData() {
+            const response = await fetch(url)
+            const data = await response.json();
+            setMessage(data);
+        }
+        fetchData()
     }, [render])
 
     const sendMessage = () => {
