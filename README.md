@@ -9,6 +9,7 @@ Baseado no projeto original da nathyts, foram implementadas algumas melhorias de
 - Responsividade completa da aplicação.
 - Componentização da listagem dos produtos.
 - Implementação de modal de detalhes do produto através do botão "Detalhes".
+- Implementação da filtragem de produtos por categoria.
 - Utilização de constantes de tipos de ação com o Redux.
 
 ---
@@ -24,4 +25,5 @@ Based on original code by nathyts, i've implemented some UI improvements and fun
 - Full responsiveness of the application.
 - Product listing componentization.
 - Implemented product details modal, accessed via "Detalhes" button.
+- Implemented filter products by category.
 - Utilization of action type constants in Redux.
