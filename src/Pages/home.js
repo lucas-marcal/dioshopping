@@ -1,8 +1,9 @@
 import React from "react";
-import { useSelector } from "react-redux";
-import { Box, Grid, Typography, List, makeStyles } from "@material-ui/core/";
+import { useDispatch, useSelector } from "react-redux";
+import { Box, Grid, Typography, List, makeStyles, ListItem, ListItemText} from "@material-ui/core/";
 import Item from "../components/Item";
 import ProductListing from "../components/ProductListing";
+import { filterProduct } from "../components/store/actions/productActions";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -18,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const HomePage = () => {
-    const products = useSelector((state) => state.products);
+    const products = useSelector((state) => state.products.allProducts);
     const classes = useStyles();
 
     const categorys = products.map((category) => {
@@ -43,6 +44,12 @@ const HomePage = () => {
         count[key] = count[key] ? count[key] + 1 : 1;
     }
 
+    const resetFilter = () => {
+        dispatch(filterProduct(products))
+    }
+
+    const dispatch = useDispatch();
+
     return (
         <Grid container className={classes.root}>
             <Grid item xs={12} sm={3}>
@@ -51,6 +58,9 @@ const HomePage = () => {
                         Categorias
                     </Typography>
                     <List>
+                        <ListItem button onClick={() => resetFilter()} key="0">
+                            <ListItemText primary="Todos os Produtos" secondary={arrayCategory.length} />
+                        </ListItem>
                         {category.map((category) => {
                             return (
                                 <Item

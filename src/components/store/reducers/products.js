@@ -1,12 +1,16 @@
 import { ActionTypes } from '../actions/actionTypes';
 import productsList from './product';
 
-const PRODUCT = productsList;
+const INITIAL_STATE = {
+    allProducts: productsList,
+    currentProducts: productsList
+}
 
-export const products = (state = PRODUCT, {type, payload}) => {
+export const products = (state = INITIAL_STATE, {type, payload}) => {
     switch (type) {
-        case ActionTypes.SET_PRODUCTS:
-            return {...state, products: payload}
+        case ActionTypes.FILTER_PRODUCTS:    
+            return {...state, currentProducts: payload}
+
         default:
             return state;
     }

@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const ProductComponent = () => {
-    const products = useSelector((state) => state.products);
+    const products = useSelector((state) => state.products.currentProducts);
 
     const classes = useStyles();
     const renderList = products.map((product) => {
